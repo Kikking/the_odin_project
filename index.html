@@ -6,21 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<header>
-    <input type="button" value="gmail">
-    <input type="button" value="images">
-    <input type="button" value="button">
-    <input type="button" value="button">
-</header>
-<body>
+<style>
+   
+    .grid{
+        display: grid;
+        grid-template-areas:'header'  'middle' 'search' 'footer';
+        background-color: rgb(150, 48, 48);
+        grid-area: span; 
+        column-gap: 100px;
+        row-gap: 100px ;
+       
+     
+    }
+    header{
+grid-area: header;
+    }
+    img{
+        grid-area: middle;
+justify-content: center;
+    }
+    .middle-buttons{
+grid-area: middle;
+height:10px;
+width: 10px;
+    }
+    form{
+        grid-area: search;
+        justify-content: space-evenly;
+    }
+    footer{
+        grid-area: footer;
+    }
+</style>
+
+<body class="grid">
+    <header>
+        <input type="button" value="gmail">
+        <input type="button" value="images">
+        <input type="button" value="button">
+        <input type="button" value="button">
+    </header>
     <form>
         <input type="search"></input>
         
     </form>
     
    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" ></img> 
-   <input type="button" value="Google Search">
-   <input type="button" value="I'm Feeling Lucky">
+   <input class="middle-buttons" type="button" value="Google Search">
+   <input class="middle-buttons" type="button" value="I'm Feeling Lucky">
 </body>
 <footer>
     <input type="button" value="Advertising">
