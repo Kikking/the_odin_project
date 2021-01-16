@@ -10,32 +10,44 @@
    
     .grid{
         display: grid;
-        grid-template-areas:'header'  'middle' 'search' 'footer';
-        background-color: rgb(150, 48, 48);
-        grid-area: span; 
+        grid-template-areas:'header header header'
+         '. middle .'
+          '. search .'
+          'buttons buttons buttons' 
+          'footer footer footer';
+        background-color: rgb(253, 253, 253);
         column-gap: 100px;
         row-gap: 100px ;
-       
-     
+       justify-content: center;
+       align-content: center;
+       place-content: center;
     }
     header{
 grid-area: header;
+
     }
     img{
         grid-area: middle;
-justify-content: center;
     }
-    .middle-buttons{
-grid-area: middle;
-height:10px;
-width: 10px;
+    .middle-button-1{
+grid-area: buttons;
+height:20px;
+width: 330px;
+place-items: space-between;
+    }
+    .middle-button-2{
+grid-area: buttons;
+height:20px;
+width: 20px;
+justify-self: center;
     }
     form{
         grid-area: search;
-        justify-content: space-evenly;
+        float: left;
     }
     footer{
         grid-area: footer;
+        align-content: bottom;
     }
 </style>
 
@@ -52,8 +64,8 @@ width: 10px;
     </form>
     
    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" ></img> 
-   <input class="middle-buttons" type="button" value="Google Search">
-   <input class="middle-buttons" type="button" value="I'm Feeling Lucky">
+   <input class="middle-button-1" type="button" value="Google Search">
+   <input class="middle-button-2" type="button" value="I'm Feeling Lucky">
 </body>
 <footer>
     <input type="button" value="Advertising">
