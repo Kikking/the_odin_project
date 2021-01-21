@@ -10,6 +10,8 @@
    
     .grid{
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:'header header header'
          '. middle .'
           '. search .'
@@ -17,14 +19,33 @@
           'footer footer footer';
         background-color: rgb(253, 253, 253);
         column-gap: 100px;
-        row-gap: 100px ;
+        row-gap: 50px  ;
        justify-content: center;
        align-content: center;
        place-content: center;
     }
     header{
 grid-area: header;
-
+display:flex;
+flex-direction: row;
+place-items: center;
+justify-content: flex-end;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+color: rgb(15, 15, 15);
+    }
+    #gmail-btn{
+        margin-left: 10px;
+    }
+     #images-btn{
+        margin-left: 10px;
+     }
+    #sign-in-btn{
+        margin-left: 10px;
+    }
+    #sign-in-btn:hover, #images-btn:hover, #gmail-btn:hover{
+        text-decoration: underline;
+        cursor: pointer;
     }
     img{
         grid-area: middle;
@@ -37,7 +58,7 @@ grid-area: header;
     .search-bar{
         width: 500px;
         height: 45px;
-        border-color: dimgray;
+        border-color: #dfe1e5;
         border-radius: 50px;
         border-width: 1px;
 
@@ -49,19 +70,29 @@ grid-area: header;
         display: flex;
         flex-direction: row;
 grid-area: buttons;
-align-content: center;
+justify-content: center;
+margin: 10px;
 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+font-size: 15px;
 
     }
     #button-1{
-       
-        padding: 5px;
-background-color: whitesmoke;
+    
+       margin-right: 5px;
+        padding: 10px;
+background-color:whitesmoke;
+border-radius: 5px;
+
     }
      #button-2{
-        
-         padding: 5px;
-background-color: whitesmoke;
+         margin-left: 5px;
+         padding: 10px;
+background-color:whitesmoke;
+border-radius: 5px;
+     }
+     #button-1:hover, #button-2:hover{
+         cursor: pointer;
+        box-shadow: 0px 0px 1px 1px rgba(63, 62, 62, 0.4);
      }
 
     footer{
@@ -72,10 +103,9 @@ background-color: whitesmoke;
 
 <body class="grid">
     <header>
-        <input type="button" value="gmail">
-        <input type="button" value="images">
-        <input type="button" value="button">
-        <input type="button" value="button">
+        <a id="gmail-btn">Gmail</a>
+        <a id="images-btn">Images</a>
+        <a id= "sign-in-btn">Sign In</a>
     </header>
     <form>
         <input class="search-bar" type="search"></input>
