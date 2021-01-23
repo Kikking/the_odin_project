@@ -11,7 +11,7 @@
     .grid{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 50px 1fr auto auto;
         grid-template-areas:'header header header'
          '. middle .'
           '. search .'
@@ -19,7 +19,7 @@
           'footer footer footer';
         background-color: rgb(253, 253, 253);
         column-gap: 100px;
-        row-gap: 50px  ;
+        row-gap: 50px;
        justify-content: center;
        align-content: center;
        place-content: center;
@@ -32,16 +32,19 @@ place-items: center;
 justify-content: flex-end;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 13px;
-color: rgb(15, 15, 15);
+color: rgba(15, 15, 15, 0.89);
     }
     #gmail-btn{
-        margin-left: 10px;
+        
+        padding: 10px;
     }
      #images-btn{
-        margin-left: 10px;
+        
+        padding:10px;
      }
     #sign-in-btn{
-        margin-left: 10px;
+      
+        padding:10px;
     }
     #sign-in-btn:hover, #images-btn:hover, #gmail-btn:hover{
         text-decoration: underline;
@@ -50,13 +53,16 @@ color: rgb(15, 15, 15);
     img{
         grid-area: middle;
         justify-self: center;
+        padding-top: 50px;
     }
     form{
         grid-area: search;
-        
+        padding-top: 70px;
+        padding-bottom: 0px;
     }
     .search-bar{
-        width: 500px;
+        border-style: solid;
+        width: 550px;
         height: 45px;
         border-color: #dfe1e5;
         border-radius: 50px;
@@ -64,7 +70,7 @@ color: rgb(15, 15, 15);
 
     }
     .search-bar:hover{
-        box-shadow:  0px 0px 5px 2px rgba(0, 0, 0, 0.4);
+        box-shadow:  0px 0px 5px 2px rgba(0, 0, 0, 0.089);
     }
     .middle-button{
         display: flex;
@@ -74,15 +80,14 @@ justify-content: center;
 margin: 10px;
 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 font-size: 15px;
-
+padding-top: -1000px;
     }
     #button-1{
     
-       margin-right: 5px;
-        padding: 10px;
+margin-right: 5px;
+padding: 10px;
 background-color:whitesmoke;
 border-radius: 5px;
-
     }
      #button-2{
          margin-left: 5px;
@@ -97,7 +102,45 @@ border-radius: 5px;
 
     footer{
         grid-area: footer;
-        align-content: bottom;
+     
+    }
+    ul{
+        list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+      background-color: whitesmoke;
+        border: 1px solid hsl(220, 9%, 87%);
+
+    }
+   li{ 
+    float: left;
+       font-family:Arial, Helvetica, sans-serif;
+       
+       font-size: 15px;
+   }
+   li:hover{
+       text-decoration: underline;
+        cursor: pointer;
+
+   }
+   
+    #Advertising, #Business, #About, #How-Search-Works{
+        display: block;
+        color:rgb(78, 78, 78);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+       
+    }
+    #Privacy, #Terms, #Settings{
+        display: block;
+        color:rgb(78, 78, 78);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
     }
 </style>
 
@@ -121,12 +164,16 @@ border-radius: 5px;
 
 </body>
 <footer>
-    <input type="button" value="Advertising">
-    <input type="button" value="Business">
-     <input type="button" value="About">  
- <input type="button" value="How Search Works">
-    <input type="button" value="Privacy">
-    <input type="button" value="Terms">
-    <input type="button" value="Settings">
+    <ul>
+        <li><a id="Advertising">Advertising</a></li>  
+   <li> <a id="Business">Business</a></li>
+   <li><a id="About">  About</a></li> 
+   <li><a id="How-Search-Works">How Search Works</a></li> 
+   <li style="float: right" ><a id="Settings">Settings</a></li> 
+   <li style="float: right" ><a id="Terms">Terms</a></li> 
+     <li style="float: right" ><a id="Privacy">Privacy</a></li>   
+</ul>
+      
+    
 </footer>
 </html>
